@@ -1,0 +1,11 @@
+itemGroup.items_tab=Asmall Mod(Items)
+itemGroup.block_tab=Asmall Mod(Blocks)
+
+item.iron_ingot_one.name=Reinforced Iron Ingot MKI
+item.iron_ingot_one_1.name=Reinforced Iron Ingot MKI+
+
+item.iron_apple_one.name=Reinforced Iron Apple MKI
+
+tile.iron_block_one.name=Reinforced Iron Ingot MKI
+
+entity.entity_iron_slime.name=Iron Slime

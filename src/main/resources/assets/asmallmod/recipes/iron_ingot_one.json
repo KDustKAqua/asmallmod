@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    " I ",
+    "IOI",
+    " I "
+  ],
+
+  "key":
+  {
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+
+    "O":
+    {
+      "item": "minecraft:obsidian"
+    }
+  },
+
+  "result":
+  {
+    "item": "asmallmod:iron_ingot_one",
+    "count": 1
+  }
+}

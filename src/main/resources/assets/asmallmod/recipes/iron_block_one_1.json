@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "III",
+    "III",
+    "III"
+  ],
+
+  "key":
+  {
+    "I":
+    {
+      "item": "asmallmod:iron_ingot_one_1"
+    }
+  },
+
+  "result":
+  {
+    "item": "asmallmod:iron_block_one_1",
+    "count": 1
+  }
+}

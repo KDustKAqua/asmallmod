@@ -1,0 +1,11 @@
+itemGroup.items_tab=Asmall Mod（物品）
+itemGroup.block_tab=Asmall Mod（方块）
+
+item.iron_ingot_one.name=强化铁锭 MKI
+item.iron_ingot_one_1.name=强化铁锭 MKI+
+
+item.iron_apple_one.name=强化铁苹果 MKI
+
+tile.iron_block_one.name=强化铁块 MKI
+
+entity.entity_iron_slime.name=铁史莱姆

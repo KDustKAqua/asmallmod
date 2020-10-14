@@ -3,20 +3,22 @@ buildscript {
         kotlin_version = "1.3.40"
     }
     repositories {
-        jcenter()
+        maven { url = 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url = 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven {
             name = "forge"
-            url = "https://files.minecraftforge.net/maven"
+            url = "https://lss233.com/artifactory/minecraft"
         }
     }
     dependencies {
+        classpath files('fgow-1.2.1.jar')
         classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 apply plugin: "kotlin"
-apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: 'net.minecraftforge.gradle.forge'
 
 group = 'nmmoc7'
 version = '1.0-SNAPSHOT'
@@ -36,11 +38,14 @@ minecraft {
 }
 
 repositories {
-    mavenCentral()
-    jcenter()
     maven {
-        url "http://maven.shadowfacts.net/"
+        name = "maven"
+        url = "http://maven.oschina.net/content/groups/public/"
     }
+    maven { url = 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url = 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    maven { url = "http://maven.shadowfacts.net/" }
+    mavenCentral()
 }
 
 dependencies {

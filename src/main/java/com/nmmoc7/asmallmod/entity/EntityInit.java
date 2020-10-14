@@ -1,6 +1,6 @@
 package com.nmmoc7.asmallmod.entity;
 
-import com.nmmoc7.asmallmod.asmallmod;
+import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.entity.list.EntityIronSlime;
 import com.nmmoc7.asmallmod.init.ModEntity;
 import net.minecraft.entity.Entity;
@@ -14,11 +14,11 @@ public class EntityInit {
 
     public static void registerEntity(String name, Class<? extends Entity> entity, int id, int rage, int primaryColor, int secpmdaryColor){
         EntityRegistry.registerModEntity(
-                new ResourceLocation(asmallmod.MOD_ID + ":" +name),
+                new ResourceLocation(AsmallMod.MOD_ID + ":" +name),
                 entity,
                 name,
                 id,
-                asmallmod.INSTANCE,
+                AsmallMod.INSTANCE,
                 rage,
                 1,
                 true,

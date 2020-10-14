@@ -29,6 +29,7 @@ public class EffectFoodBase extends FoodBase implements IHasModel {
         }
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack){
         return true;

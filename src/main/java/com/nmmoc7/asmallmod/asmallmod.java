@@ -15,11 +15,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(
-        modid = asmallmod.MOD_ID,
-        name = asmallmod.MOD_NAME,
-        version = asmallmod.VERSION
+        modid = AsmallMod.MOD_ID,
+        name = AsmallMod.MOD_NAME,
+        version = AsmallMod.VERSION
 )
-public class asmallmod {
+public class AsmallMod {
 
     public static final String MOD_ID = "asmallmod";
     public static final String MOD_NAME = "A Small Mod";
@@ -32,7 +32,7 @@ public class asmallmod {
      * This is the instance of your mod as created by Forge. It will never be null.
      */
     @Mod.Instance(MOD_ID)
-    public static asmallmod INSTANCE;
+    public static AsmallMod INSTANCE;
 
     @SidedProxy(clientSide = CLIENT_PROXY_CLASS, serverSide = COMMON_PROXY_CLASS)
     public static CommonProxy proxy;

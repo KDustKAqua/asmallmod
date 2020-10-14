@@ -1,6 +1,6 @@
-package com.nmmoc7.asmallmod.Items;
+package com.nmmoc7.asmallmod.items;
 
-import com.nmmoc7.asmallmod.asmallmod;
+import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.init.ModItems;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,6 +25,6 @@ public final class ItemBase extends Item implements IHasModel {
 
     @Override
     public void registerModels(){
-        asmallmod.proxy.registerItemRender(this, 0, "inventory");
+        AsmallMod.proxy.registerItemRender(this, 0, "inventory");
     }
 }

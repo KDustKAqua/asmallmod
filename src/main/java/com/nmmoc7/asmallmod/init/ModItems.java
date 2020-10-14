@@ -1,8 +1,7 @@
 package com.nmmoc7.asmallmod.init;
 
 import com.nmmoc7.asmallmod.food.EffectFoodBase;
-import com.nmmoc7.asmallmod.food.FoodBase;
-import com.nmmoc7.asmallmod.Items.ItemBase;
+import com.nmmoc7.asmallmod.items.ItemBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;

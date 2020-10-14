@@ -1,6 +1,6 @@
 package com.nmmoc7.asmallmod.blocks;
 
-import com.nmmoc7.asmallmod.asmallmod;
+import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.init.ModBlocks;
 import com.nmmoc7.asmallmod.init.ModItems;
 import com.nmmoc7.asmallmod.util.IHasModel;
@@ -32,6 +32,6 @@ public class BlockBase extends Block implements IHasModel {
 
     @Override
     public void registerModels(){
-        asmallmod.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inventory");
+        AsmallMod.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

@@ -1,5 +1,6 @@
 itemGroup.items_tab=Asmall Mod（物品）
 itemGroup.block_tab=Asmall Mod（方块）
+itemGroup.food_tab=Asmall Mod(食物)
 
 item.iron_ingot_one.name=强化铁锭 MKI
 item.iron_ingot_one_1.name=强化铁锭 MKI+

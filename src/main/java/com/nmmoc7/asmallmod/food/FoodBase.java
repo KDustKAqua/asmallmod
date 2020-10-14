@@ -1,6 +1,6 @@
 package com.nmmoc7.asmallmod.food;
 
-import com.nmmoc7.asmallmod.asmallmod;
+import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.init.ModItems;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
@@ -26,6 +26,6 @@ public class FoodBase extends ItemFood implements IHasModel {
 
     @Override
     public void registerModels(){
-        asmallmod.proxy.registerItemRender(this, 0, "inventory");
+        AsmallMod.proxy.registerItemRender(this, 0, "inventory");
     }
 }

@@ -6,25 +6,19 @@ import com.nmmoc7.asmallmod.init.ModItems;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
+
+import static com.nmmoc7.asmallmod.tabs.ModTabs.BLOCKS_TAB;
 
 public class BlockBase extends Block implements IHasModel {
-    public static final CreativeTabs BLOCK_TAB = new CreativeTabs("block_tab") {
-        @Override
-        public ItemStack createIcon() {
-            return new ItemStack(ModBlocks.IRON_BLOCK_ONE);
-        }
-    };
 
     public BlockBase(String name, Material material) {
         super(material);
 
         setTranslationKey(name);
         setRegistryName(name);
-        setCreativeTab(BLOCK_TAB);
+        setCreativeTab(BLOCKS_TAB);
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

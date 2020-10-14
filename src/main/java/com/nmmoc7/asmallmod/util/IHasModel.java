@@ -4,5 +4,5 @@ public interface IHasModel {
     /**
      *  注册模型
      */
-    public void registerModels();
+    void registerModels();
 }

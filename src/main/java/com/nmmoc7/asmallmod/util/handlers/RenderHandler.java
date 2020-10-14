@@ -9,12 +9,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class RenderHandler {
     public static void registerEntityRenders(){
-        RenderingRegistry.registerEntityRenderingHandler(EntityIronSlime.class, new IRenderFactory<EntityIronSlime>() {
-            @Override
-            public Render<? super EntityIronSlime> createRenderFor(RenderManager renderManager) {
-                return new RenderIronSlime(renderManager);
-                };
-            }
+        RenderingRegistry.registerEntityRenderingHandler(EntityIronSlime.class, renderManager -> new RenderIronSlime(renderManager)
         );
     }
 }

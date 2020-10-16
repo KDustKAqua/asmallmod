@@ -1,12 +1,16 @@
+# 创造物品栏
 itemGroup.items_tab=Asmall Mod（物品）
 itemGroup.blocks_tab=Asmall Mod（方块）
 itemGroup.food_tab=Asmall Mod(食物)
-
+# 物品
 item.iron_ingot_one.name=强化铁锭 MKI
 item.iron_ingot_one_1.name=强化铁锭 MKI+
-
+# 食物
 item.iron_apple_one.name=强化铁苹果 MKI
-
+# 方块
 tile.iron_block_one.name=强化铁块 MKI
-
+# 实体
 entity.entity_iron_slime.name=铁史莱姆
+# 配置文件
+config.asmallmod.general.bar=b-ar
+config.asmallmod.general.bar.tooltip=这是bar

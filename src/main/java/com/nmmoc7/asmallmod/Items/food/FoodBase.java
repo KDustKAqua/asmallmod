@@ -1,4 +1,4 @@
-package com.nmmoc7.asmallmod.food;
+package com.nmmoc7.asmallmod.items.food;
 
 import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.init.ModItems;

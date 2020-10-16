@@ -7,6 +7,7 @@ import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -36,14 +37,12 @@ public class RegistryHandler {
                 ((IHasModel)block).registerModels();
             }
         }
+
+        RenderHandler.registerEntityRenders();
     }
 
     public static void preInitRegistries(){
         EntityInit.registerEntities();
-        RenderHandler.registerEntityRenders();
     }
 
-    public static void postInitRegistries(){
-
-    }
 }

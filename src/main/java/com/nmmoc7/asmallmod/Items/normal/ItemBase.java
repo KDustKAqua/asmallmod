@@ -1,4 +1,4 @@
-package com.nmmoc7.asmallmod.items;
+package com.nmmoc7.asmallmod.items.normal;
 
 import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.init.ModItems;
@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 
 import static com.nmmoc7.asmallmod.tabs.ModTabs.ITEMS_TAB;
 
-public final class ItemBase extends Item implements IHasModel {
+public class ItemBase extends Item implements IHasModel {
     public ItemBase(String name){
         setTranslationKey(name);
         setRegistryName(name);

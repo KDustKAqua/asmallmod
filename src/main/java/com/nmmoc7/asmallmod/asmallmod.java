@@ -1,19 +1,13 @@
 package com.nmmoc7.asmallmod;
 
-import com.nmmoc7.asmallmod.init.ModRecipes;
 import com.nmmoc7.asmallmod.proxy.CommonProxy;
-import com.nmmoc7.asmallmod.util.handlers.RegistryHandler;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
+@SuppressWarnings("ALL")
 @Mod(
         modid = AsmallMod.MOD_ID,
         name = AsmallMod.MOD_NAME,
@@ -43,22 +37,18 @@ public class AsmallMod {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        RegistryHandler.preInitRegistries();
+        proxy.preInit(event);
     }
 
     /**
      * This is the second initialization event. Register custom recipes
      */
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        ModRecipes.init();
-    }
+    public void init(FMLInitializationEvent event) { proxy.init(event); }
 
     /**
      * This is the final initialization event. Register actions from other mods here
      */
     @Mod.EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-
-    }
+    public void postinit(FMLPostInitializationEvent event) { proxy.postInit(event); }
 }

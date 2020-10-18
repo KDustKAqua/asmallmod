@@ -1,18 +1,20 @@
 package com.nmmoc7.asmallmod.items.normal;
 
 import com.nmmoc7.asmallmod.AsmallMod;
-import com.nmmoc7.asmallmod.autojson.AutoJson;
-import com.nmmoc7.asmallmod.items.interfaces.IHasJson;
+import com.nmmoc7.asmallmod.auto.AutoJson;
+import com.nmmoc7.asmallmod.auto.AutoTextures;
+import com.nmmoc7.asmallmod.util.IHasJson;
 import com.nmmoc7.asmallmod.util.IHasModel;
-import net.minecraft.item.Item;
+import com.nmmoc7.asmallmod.util.IHasTextures;
 
-public class PartsBase implements IHasJson, IHasModel {
+public class PartsBase implements IHasJson, IHasModel, IHasTextures {
     public PartsBase(int amount, String name){
         String realName;
         for(int i = 0; i < amount; i++){
             realName = name + "_mk_" + i;
             AsmallMod.proxy.registerItemRender(new ItemBase(realName), 0, "inventory");
             createJson(realName, "item", "generated");
+            createTextures("ingot", "items", realName);
         }
     }
 
@@ -28,5 +30,37 @@ public class PartsBase implements IHasJson, IHasModel {
     @Override
     public void registerModels() {
 
+    }
+
+
+    /**
+     * default : new AutoTextures(String sourceTypes, String destTypes, String name);
+     * types list:
+     * block_iron :    铁块纹理
+     * block_ore  :    铁矿纹理
+     * helmet     :    头盔
+     * chest      :    胸甲
+     * legs       :    腿
+     * boots      :    靴子
+     * sword      :    剑
+     * axe        :    斧子
+     * pickaxe    :    镐子
+     * shovel     :    铲子
+     * hoe        :    锄头
+     * ingot      :    铁锭
+     * nugget     :    铁粒
+     * dust       :    火药
+     * <p>
+     * types list:
+     * items       物品
+     * blocks      方块
+     *
+     * @param sourceTypes
+     * @param destTypes
+     * @param name
+     */
+    @Override
+    public void createTextures(String sourceTypes, String destTypes, String name) {
+        new AutoTextures(sourceTypes, destTypes, name);
     }
 }

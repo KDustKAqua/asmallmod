@@ -1,9 +1,8 @@
 package com.nmmoc7.asmallmod.util.handlers;
 
-import com.nmmoc7.asmallmod.autojson.ItemColor;
+import com.nmmoc7.asmallmod.auto.ItemColor;
 import com.nmmoc7.asmallmod.entity.EntityInit;
 import com.nmmoc7.asmallmod.init.ModBlocks;
-import com.nmmoc7.asmallmod.init.ModItems;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

@@ -1,10 +1,10 @@
 package com.nmmoc7.asmallmod.blocks;
 
 import com.nmmoc7.asmallmod.AsmallMod;
-import com.nmmoc7.asmallmod.autojson.AutoJson;
+import com.nmmoc7.asmallmod.auto.AutoJson;
 import com.nmmoc7.asmallmod.init.ModBlocks;
 import com.nmmoc7.asmallmod.init.ModItems;
-import com.nmmoc7.asmallmod.items.interfaces.IHasJson;
+import com.nmmoc7.asmallmod.util.IHasJson;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

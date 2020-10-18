@@ -1,4 +1,4 @@
-package com.nmmoc7.asmallmod.items.interfaces;
+package com.nmmoc7.asmallmod.util;
 
 public interface IHasJson {
     /**

@@ -1,9 +1,7 @@
 package com.nmmoc7.asmallmod.items.normal;
 
-import com.nmmoc7.asmallmod.autojson.AutoJson;
 import com.nmmoc7.asmallmod.items.armors.AllArmorBase;
 import com.nmmoc7.asmallmod.items.tools.AllToolsBase;
-import net.minecraft.item.Item;
 
 public class ToolsAndArmorsBase {
     private final String name;

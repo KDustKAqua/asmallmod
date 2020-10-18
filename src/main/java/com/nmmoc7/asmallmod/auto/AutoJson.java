@@ -1,11 +1,10 @@
-package com.nmmoc7.asmallmod.autojson;
+package com.nmmoc7.asmallmod.auto;
 
 import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Objects;
 
 import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 

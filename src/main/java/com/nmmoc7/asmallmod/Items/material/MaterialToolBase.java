@@ -12,12 +12,3 @@ public class MaterialToolBase extends ItemBase {
         TOOL_MATERIAL = EnumHelper.addToolMaterial(name.toUpperCase(), level, maxUses, efficiency, damge, enchantability);
     }
 }
-
-// 护具材料
-// String                        name,
-// String                        textureName,
-// int                           durability,
-// int[]                         reductionAmounts,
-// int                           enchantability,
-// net.minecraft.util.SoundEvent soundOnEquip,
-// float                         toughness

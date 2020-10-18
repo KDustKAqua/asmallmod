@@ -1,8 +1,6 @@
 package com.nmmoc7.asmallmod.autojson;
 
 import com.google.gson.Gson;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -14,20 +12,40 @@ public class AutoJson {
     Gson itemJsonCreator = new Gson();
     String dir;
     String jsonContent;
-    File itemJson;
+    File jsonPath;
 
     public AutoJson(String name, String itemOrBlock, String types){
-        dir = "../src/main/resources/assets/" + MOD_ID + "/models/"+ itemOrBlock + "/";
-        String wdnmd = System.getProperty("user.dir");
-        jsonContent = itemJsonCreator.toJson(new ItemJson(types, name));
-        itemJson = new File(dir + name + ".json");
+        switch (itemOrBlock){
+            case "block":
+                dir = "../src/main/resources/assets/" + MOD_ID + "/models/block/";
+                jsonContent = itemJsonCreator.toJson(new BlockJson(types, name));
+                jsonPath = new File(dir + name + ".json");
+
+                createJson();
+
+                dir = "../src/main/resources/assets/" + MOD_ID + "/models/item/";
+                jsonContent = itemJsonCreator.toJson(new BlockItemJson(name));
+                jsonPath = new File(dir + name + ".json");
+
+                createJson();
+                break;
+            case "item":
+                dir = "../src/main/resources/assets/" + MOD_ID + "/models/item/";
+                jsonContent = itemJsonCreator.toJson(new ItemJson(types, name));
+                jsonPath = new File(dir + name + ".json");
+
+                createJson();
+                break;
+            default:
+                break;
+        }
     }
 
-    public AutoJson createItemJson(){
-        if(!itemJson.exists()){
+    public AutoJson createJson() {
+        if (!jsonPath.exists()) {
             try {
-                itemJson.createNewFile();
-                FileWriter resultFile = new FileWriter(itemJson);
+                jsonPath.createNewFile();
+                FileWriter resultFile = new FileWriter(jsonPath);
                 resultFile.write(jsonContent);
                 resultFile.flush();
                 resultFile.close();
@@ -42,25 +60,45 @@ public class AutoJson {
 
     private class ItemJson{
         String parent;
-        Textures textures;
+        ItemTextures textures;
 
         private ItemJson(String types, String name){
             parent = "item/" + types;
-            textures = new Textures(name);
+            textures = new ItemTextures(name);
         }
     }
 
-    private class Textures{
+    private class ItemTextures {
         String layer0;
 
-        private Textures(String name) {
+        private ItemTextures(String name) {
             layer0 = MOD_ID + ":items/" + name;
         }
     }
+
+    private class BlockJson{
+        String parent;
+        BlockTextures textures;
+
+        private BlockJson(String types, String name){
+            parent = "block/" + types;
+            textures = new BlockTextures(name);
+        }
+    }
+
+    private class BlockTextures{
+        String all;
+
+        private BlockTextures(String name) {
+            all = MOD_ID + ":blocks/" + name;
+        }
+    }
+
+    private class BlockItemJson {
+        String parent;
+
+        private BlockItemJson(String name){
+            parent = MOD_ID + ":block/" + name;
+        }
+    }
 }
-// {
-//     "parent": "item/generated",
-//     "textures": {
-//     "layer0": "asmallmod:items/iron_ingot_one"
-//     }
-// }

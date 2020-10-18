@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 
@@ -22,16 +23,18 @@ public class AutoJson {
                 jsonPath = new File(dir + name + ".json");
 
                 createJson();
-
-                dir = "../src/main/resources/assets/" + MOD_ID + "/models/item/";
-                jsonContent = itemJsonCreator.toJson(new BlockItemJson(name));
-                jsonPath = new File(dir + name + ".json");
-
-                createJson();
-                break;
             case "item":
                 dir = "../src/main/resources/assets/" + MOD_ID + "/models/item/";
-                jsonContent = itemJsonCreator.toJson(new ItemJson(types, name));
+                switch (itemOrBlock){
+                    case "item":
+                        jsonContent = itemJsonCreator.toJson(new ItemJson(types, name));
+                        break;
+                    case "block":
+                        jsonContent = itemJsonCreator.toJson(new BlockItemJson(name));
+                        break;
+                    default:
+                        break;
+                }
                 jsonPath = new File(dir + name + ".json");
 
                 createJson();

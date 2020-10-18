@@ -9,14 +9,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-import static com.nmmoc7.asmallmod.tabs.ModTabs.BLOCKS_TAB;
+import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
+import static com.nmmoc7.asmallmod.init.ModTabs.BLOCKS_TAB;
+
 
 public class BlockBase extends Block implements IHasModel {
 
     public BlockBase(String name, Material material) {
         super(material);
 
-        setTranslationKey(name);
+        setTranslationKey(MOD_ID + "." + name);
         setRegistryName(name);
         setCreativeTab(BLOCKS_TAB);
 

@@ -1,6 +1,6 @@
-itemGroup.items_tab=Asmall Mod(Items)
-itemGroup.blocks_tab=Asmall Mod(Blocks)
-itemGroup.food_tab=Asmall Mod(Food)
+itemGroup.asmallmod.items_tab=Asmall Mod(Items)
+itemGroup.asmallmod.blocks_tab=Asmall Mod(Blocks)
+itemGroup.asmallmod.food_tab=Asmall Mod(Food)
 
 item.iron_ingot_one.name=Reinforced Iron Ingot MKI
 item.iron_ingot_one_1.name=Reinforced Iron Ingot MKI+

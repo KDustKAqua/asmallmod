@@ -36,9 +36,7 @@ public class AsmallMod {
      * The registry events below will have fired prior to entry to this method.
      */
     @Mod.EventHandler
-    public void preinit(FMLPreInitializationEvent event) {
-        proxy.preInit(event);
-    }
+    public void preinit(FMLPreInitializationEvent event) { proxy.preInit(event); }
 
     /**
      * This is the second initialization event. Register custom recipes

@@ -1,7 +1,7 @@
 # 创造物品栏
-itemGroup.items_tab=Asmall Mod（物品）
-itemGroup.blocks_tab=Asmall Mod（方块）
-itemGroup.food_tab=Asmall Mod(食物)
+itemGroup.asmallmod.items_tab=Asmall Mod（物品）
+itemGroup.asmallmod.blocks_tab=Asmall Mod（方块）
+itemGroup.asmallmod.food_tab=Asmall Mod(食物)
 # 物品
 item.iron_ingot_one.name=强化铁锭 MKI
 item.iron_ingot_one_1.name=强化铁锭 MKI+

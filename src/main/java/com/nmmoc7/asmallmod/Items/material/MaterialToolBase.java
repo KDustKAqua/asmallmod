@@ -7,8 +7,8 @@ import net.minecraftforge.common.util.EnumHelper;
 public class MaterialToolBase extends ItemBase {
     public final Item.ToolMaterial TOOL_MATERIAL;
 
-    public MaterialToolBase(String name, int level, int maxUses, float efficiency, float damge, int enchantability ){
-        super(name);
+    public MaterialToolBase(String name, int level, int maxUses, float efficiency, float damge, int enchantability, int color){
+        super(name, color);
         TOOL_MATERIAL = EnumHelper.addToolMaterial(name.toUpperCase(), level, maxUses, efficiency, damge, enchantability);
     }
 }

@@ -3,16 +3,22 @@ package com.nmmoc7.asmallmod.items.normal;
 import com.nmmoc7.asmallmod.AsmallMod;
 import com.nmmoc7.asmallmod.auto.AutoJson;
 import com.nmmoc7.asmallmod.auto.AutoTextures;
+import com.nmmoc7.asmallmod.util.IAmItem;
 import com.nmmoc7.asmallmod.util.IHasJson;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import com.nmmoc7.asmallmod.util.IHasTextures;
 
-public class PartsBase implements IHasJson, IHasModel, IHasTextures {
-    public PartsBase(int amount, String name){
+public class PartsBase implements IAmItem {
+    public PartsBase(int amount, String name, int color){
         String realName;
+        int modulus;
         for(int i = 0; i < amount; i++){
             realName = name + "_mk_" + i;
-            AsmallMod.proxy.registerItemRender(new ItemBase(realName), 0, "inventory");
+            modulus = (678 - i) * (367 - i);
+            if (modulus < 0) {
+                modulus = -modulus;
+            }
+            AsmallMod.proxy.registerItemRender(new ItemBase(realName, color + (i * modulus)), 0, "inventory");
             createJson(realName, "item", "generated");
             createTextures("ingot", "items", realName);
         }

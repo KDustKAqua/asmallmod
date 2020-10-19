@@ -1,16 +1,43 @@
 package com.nmmoc7.asmallmod.proxy;
 
+import com.nmmoc7.asmallmod.fluid.BlockFluidModBase;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
+
 public class ClientProxy extends CommonProxy{
     @Override
-    public void registerItemRender(Item item, int meta, String id){
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    public void registerItemRender(Item item, int meta, String id){ ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id)); }
+
+    @Override
+    public void registerFluidRender(BlockFluidModBase blockFluid, String blockStateName) {
+        final String location = MOD_ID + ":" + blockStateName;
+        final Item itemFluid = Item.getItemFromBlock(blockFluid);
+        ModelLoader.setCustomMeshDefinition(itemFluid, new ItemMeshDefinition()
+        {
+            @Override
+            public ModelResourceLocation getModelLocation(ItemStack stack)
+            {
+                return new ModelResourceLocation(location, "fluid");
+            }
+        });
+        ModelLoader.setCustomStateMapper(blockFluid, new StateMapperBase()
+        {
+            @Override
+            protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+            {
+                return new ModelResourceLocation(location, "fluid");
+            }
+        });
     }
 
     @Override

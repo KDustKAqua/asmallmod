@@ -13,8 +13,8 @@ import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 public class EffectFoodBase extends FoodBase implements IHasModel {
     PotionEffect effect;
 
-    public  EffectFoodBase(String name, int amout, float saturation, boolean isWolfFood, PotionEffect effect){
-        super(name, amout, saturation, isWolfFood);
+    public  EffectFoodBase(String name, int amout, float saturation, boolean isWolfFood, PotionEffect effect, int color){
+        super(name, amout, saturation, isWolfFood, color);
         setAlwaysEdible();
         this.effect = effect;
     }

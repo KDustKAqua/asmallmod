@@ -17,7 +17,7 @@ import static com.nmmoc7.asmallmod.init.ModTabs.BLOCKS_TAB;
 
 public class BlockBase extends Block implements IHasModel, IHasJson {
 
-    public BlockBase(String name, Material material) {
+    public BlockBase(String name, Material material, int color) {
         super(material);
 
         setTranslationKey(MOD_ID + "." + name);
@@ -25,7 +25,7 @@ public class BlockBase extends Block implements IHasModel, IHasJson {
         setCreativeTab(BLOCKS_TAB);
 
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        ModItems.ITEMS_MAP.put(new ItemBlock(this).setRegistryName(this.getRegistryName()), color);
         createJson(name, "block", "cube_all");
     }
 

@@ -6,10 +6,10 @@ import com.nmmoc7.asmallmod.items.tools.AllToolsBase;
 public class ToolsAndArmorsBase {
     private final String name;
 
-    public ToolsAndArmorsBase(String name, int maxUses, int[] armorNum, int enchantAbility, float toughness, int level, int efficiency, float damage){
+    public ToolsAndArmorsBase(String name, int maxUses, int[] armorNum, int enchantAbility, float toughness, int level, int efficiency, float damage, int color){
         this.name = name;
-        (new AllArmorBase(name + "_armor", maxUses / 5, armorNum, enchantAbility, toughness)).init();
-        (new AllToolsBase(name + "_tool", level, maxUses, efficiency, damage, enchantAbility)).init();
+        (new AllArmorBase(name + "_armor", maxUses / 5, armorNum, enchantAbility, toughness, color)).init();
+        (new AllToolsBase(name + "_tool", level, maxUses, efficiency, damage, enchantAbility, color)).init();
     }
 
 }

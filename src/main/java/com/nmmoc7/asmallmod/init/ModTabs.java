@@ -52,4 +52,11 @@ public class ModTabs {
             return new ItemStack(ModItems.INFINITE_RAINBOW_CHEST);
         }
     };
+
+    public static final CreativeTabs FLUID_BUCKET_TAB = new CreativeTabs(MOD_ID + "." + "fluid_bucket_tab") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ModFluid.RAINBOW_FLUID_BUCKET);
+        }
+    };
 }

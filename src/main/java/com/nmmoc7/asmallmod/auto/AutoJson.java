@@ -22,6 +22,12 @@ public class AutoJson {
                 jsonPath = new File(dir + name + ".json");
 
                 createJson();
+
+                dir = "../src/main/resources/assets/" + MOD_ID + "/blockstates/";
+                jsonContent = itemJsonCreator.toJson(new BlockStates(name));
+                jsonPath = new File(dir + name + ".json");
+
+                createJson();
             case "item":
                 dir = "../src/main/resources/assets/" + MOD_ID + "/models/item/";
                 switch (itemOrBlock){
@@ -37,6 +43,11 @@ public class AutoJson {
                 jsonPath = new File(dir + name + ".json");
 
                 createJson();
+                break;
+            case "blockFluid":
+                dir = "../src/main/resources/assets/" + MOD_ID + "/blockstates/";
+                jsonContent = itemJsonCreator.toJson(new BlockFluid(name));
+                jsonPath = new File(dir + name + ".json");
                 break;
             default:
                 break;
@@ -88,6 +99,27 @@ public class AutoJson {
         }
     }
 
+    private class BlockStates{
+        BlockVariants variants;
+
+        private BlockStates(String name){
+            variants = new BlockVariants(name);
+        }
+    }
+    private class BlockVariants{
+        Normal normal;
+
+        private BlockVariants(String name){
+            normal = new Normal(name);
+        }
+    }
+    private class Normal{
+        String model;
+
+        private Normal(String name){
+            model = MOD_ID + ":" + name;
+        }
+    }
     private class BlockTextures{
         String all;
 
@@ -101,6 +133,42 @@ public class AutoJson {
 
         private BlockItemJson(String name){
             parent = MOD_ID + ":block/" + name;
+        }
+    }
+
+    private class BlockFluid {
+        int forge_marker;
+        Variants variants;
+
+        private BlockFluid(String name) {
+            forge_marker = 1;
+            variants = new Variants(name);
+        }
+    }
+
+    private class Variants {
+        Fluid fluid;
+
+        private Variants(String name) {
+            fluid = new Fluid(name);
+        }
+    }
+
+    private class Fluid {
+        String model;
+        Custom custom;
+
+        private Fluid(String name) {
+            model = "forge:fluid";
+            custom = new Custom(name);
+        }
+    }
+
+    private class Custom {
+        String fluid;
+
+        private Custom(String name) {
+            fluid = name;
         }
     }
 }

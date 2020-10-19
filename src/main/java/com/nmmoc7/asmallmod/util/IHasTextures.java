@@ -20,6 +20,8 @@ public interface IHasTextures {
      *      ingot      :    铁锭
      *      nugget     :    铁粒
      *      dust       :    火药
+     *      fluid      :    流体
+     *      bucket     :    桶
      *
      * types list:
      *      items       物品

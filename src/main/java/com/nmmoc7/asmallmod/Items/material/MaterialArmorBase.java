@@ -8,8 +8,8 @@ import net.minecraftforge.common.util.EnumHelper;
 public class MaterialArmorBase extends ItemBase {
     public final ItemArmor.ArmorMaterial ARMOR_MATERIAL;
 
-    public MaterialArmorBase(String name, int maxUses, int[] armorNum, int enchantAbility, SoundEvent sound, float toughness){
-        super(name);
+    public MaterialArmorBase(String name, int maxUses, int[] armorNum, int enchantAbility, SoundEvent sound, float toughness, int color){
+        super(name, color);
         ARMOR_MATERIAL = EnumHelper.addArmorMaterial(name, name, maxUses, armorNum, enchantAbility, sound, toughness);
     }
 }

@@ -53,10 +53,10 @@ public class ModTabs {
         }
     };
 
-    public static final CreativeTabs FLUID_BUCKET_TAB = new CreativeTabs(MOD_ID + "." + "fluid_bucket_tab") {
+    public static final CreativeTabs FLUID_BLOCK_TAB = new CreativeTabs(MOD_ID + "." + "fluid_block_tab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModFluid.RAINBOW_FLUID_BUCKET);
+            return new ItemStack(ModBlocks.RAINBOW_FLUID_BLOCK);
         }
     };
 }

@@ -1,7 +1,5 @@
 package com.nmmoc7.asmallmod.util;
 
-import com.nmmoc7.asmallmod.auto.AutoTextures;
-
 public interface IHasTextures {
     /**
      * default : new AutoTextures(sourceTypes,destTypes,name);
@@ -10,7 +8,7 @@ public interface IHasTextures {
      *      block_ore  :    铁矿纹理
      *      helmet     :    头盔
      *      chest      :    胸甲
-     *      legs       :    腿
+     *      legs       :    护腿
      *      boots      :    靴子
      *      sword      :    剑
      *      axe        :    斧子
@@ -21,7 +19,7 @@ public interface IHasTextures {
      *      nugget     :    铁粒
      *      dust       :    火药
      *      fluid      :    流体
-     *      bucket     :    桶
+     *      bucket     :    液体桶
      *
      * types list:
      *      items       物品

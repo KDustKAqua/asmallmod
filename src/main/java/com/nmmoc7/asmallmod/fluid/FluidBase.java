@@ -5,51 +5,40 @@ import com.nmmoc7.asmallmod.init.ModFluid;
 import com.nmmoc7.asmallmod.util.IHasTextures;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
 
 import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 
+/**
+ * setDensity       default : 1000(water)  方法用于设置这个流体的密度，单位为千克每立方米
+ * setViscosity     default : 1000(water)  方法用于设置这个流体的粘度，单位为千分之一平方米每秒，使用运动粘度
+ * setLuminosity    default : 0(water)     方法用于设置这个流体的亮度，也就是在Minecraft中的亮度
+ * setTemperature   default : 300(室温)     方法用于设置这个流体的温度，使用热力学温标，也就是开尔文
+ * setGaseous       default : false(water) 方法用于标注这个流体是否为气体，默认不是
+ *
+ * new FluidBase("", 1000, 1000, 0, 300, false);
+ */
 public class FluidBase extends Fluid implements IHasTextures {
-    public FluidBase(String name) {
-        super(name, new ResourceLocation(MOD_ID + ":fluid/" + name + "_still"), new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_flow"));
+    int color;
+
+    public FluidBase(String name, int density, int viscosity, int luminosity, int temperature, boolean gaseous, int color) {
+        super(name, new ResourceLocation(MOD_ID + ":fluid/" + name + "_still"),
+                new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_flow"),
+                new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_overlay"), color);
+
+        this.color = color;
+
         this.setUnlocalizedName(MOD_ID + "." + name);
-        this.setDensity(1000);
-        this.setViscosity(750);
-        this.setLuminosity(0);
-        this.setTemperature(300);
+        this.setDensity(density);
+        this.setViscosity(viscosity);
+        this.setLuminosity(luminosity);
+        this.setTemperature(temperature);
+        this.setGaseous(gaseous);
 
         createTextures("fluid", "fluid", name);
 
         ModFluid.FLUIDS.add(this);
     }
 
-    /**
-     * default : new AutoTextures(sourceTypes,destTypes,name);
-     * types list:
-     * block_iron :    铁块纹理
-     * block_ore  :    铁矿纹理
-     * helmet     :    头盔
-     * chest      :    胸甲
-     * legs       :    腿
-     * boots      :    靴子
-     * sword      :    剑
-     * axe        :    斧子
-     * pickaxe    :    镐子
-     * shovel     :    铲子
-     * hoe        :    锄头
-     * ingot      :    铁锭
-     * nugget     :    铁粒
-     * dust       :    火药
-     * fluid      :    流体
-     * <p>
-     * types list:
-     * items       物品
-     * blocks      方块
-     *
-     * @param sourceTypes
-     * @param destTypes
-     * @param name
-     */
     @Override
     public void createTextures(String sourceTypes, String destTypes, String name) {
         new AutoTextures(sourceTypes,destTypes,name);

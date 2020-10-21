@@ -11,6 +11,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.jetbrains.annotations.NotNull;
 
 import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 
@@ -25,7 +26,7 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomMeshDefinition(itemFluid, new ItemMeshDefinition()
         {
             @Override
-            public ModelResourceLocation getModelLocation(ItemStack stack)
+            public @NotNull ModelResourceLocation getModelLocation(@NotNull ItemStack stack)
             {
                 return new ModelResourceLocation(location, "fluid");
             }
@@ -33,9 +34,9 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomStateMapper(blockFluid, new StateMapperBase()
         {
             @Override
-            protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+            protected @NotNull ModelResourceLocation getModelResourceLocation(@NotNull IBlockState state)
             {
-                return new ModelResourceLocation(location, "fluid");
+                return new ModelResourceLocation(blockStateName, "fluid");
             }
         });
     }

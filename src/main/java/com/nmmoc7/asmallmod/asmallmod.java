@@ -1,6 +1,7 @@
 package com.nmmoc7.asmallmod;
 
 import com.nmmoc7.asmallmod.proxy.CommonProxy;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,6 +22,10 @@ public class AsmallMod {
     public static final String ACCEPTED_VERSION = "[1.12.2]";
     public static final String CLIENT_PROXY_CLASS = "com.nmmoc7.asmallmod.proxy.ClientProxy";
     public static final String COMMON_PROXY_CLASS = "com.nmmoc7.asmallmod.proxy.CommonProxy";
+
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
 
     /**
      * This is the instance of your mod as created by Forge. It will never be null.

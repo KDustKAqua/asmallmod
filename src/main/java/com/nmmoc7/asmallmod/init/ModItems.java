@@ -17,10 +17,10 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.PotionEffect;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ModItems {
 
@@ -56,5 +56,5 @@ public class ModItems {
     public static final ToolsAndArmorsBase IRON_ALL_PLAN = new ToolsAndArmorsBase("iron_all_plan", 512, new int[]{1, 2, 2, 1}, 15, 0, 3, 7, 6, 0x7DE2F2);
     // parts
 
-    public static final PartsBase IRON_PARTS = new PartsBase(123, "iron_parts", 0x7DE2F2);
+    public static final PartsBase IRON_PARTS = new PartsBase(1024, "iron_parts", 0x7DE2F2);
 }

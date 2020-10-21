@@ -3,8 +3,6 @@ package com.nmmoc7.asmallmod.items.tools;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.util.EnumHelper;
 
-import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
-
 public class AllToolsBase {
     private String name;
     private Item.ToolMaterial material;

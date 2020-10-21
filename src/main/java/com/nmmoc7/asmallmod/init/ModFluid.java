@@ -1,21 +1,15 @@
 package com.nmmoc7.asmallmod.init;
 
-import com.nmmoc7.asmallmod.fluid.BlockFluidModBase;
 import com.nmmoc7.asmallmod.fluid.FluidBase;
-import com.nmmoc7.asmallmod.items.fluid.ItemBucketBase;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModFluid {
-    public static final List<FluidBase> FLUIDS = new ArrayList<>();
+    public static final List<FluidBase> FLUIDS = new ArrayList<FluidBase>();
 
     // fluid
 
-    public static final FluidBase RAINBOW_FLUID = new FluidBase("rainbow_fluid");
-
-    public static final BlockFluidModBase RAINBOW_FLUID_BLOCK = new BlockFluidModBase("rainbow_fluid_block", RAINBOW_FLUID);
-    // bucket
-
-    public static final ItemBucketBase RAINBOW_FLUID_BUCKET = new ItemBucketBase("rainbow_fluid_bucket", RAINBOW_FLUID_BLOCK, 0x114514);
+    public static final FluidBase RAINBOW_FLUID = new FluidBase("rainbow_fluid", 1000, 1000, 0, 300, false,0xF5F5DC);
 }

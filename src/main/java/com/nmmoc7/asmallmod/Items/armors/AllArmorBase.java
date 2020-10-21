@@ -5,8 +5,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.common.util.EnumHelper;
 
-import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
-
 public class AllArmorBase {
     private String name;
     private ItemArmor.ArmorMaterial ARMOR_MATERIAL;

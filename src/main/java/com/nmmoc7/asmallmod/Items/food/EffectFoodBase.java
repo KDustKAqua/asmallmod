@@ -8,8 +8,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
-
 public class EffectFoodBase extends FoodBase implements IHasModel {
     PotionEffect effect;
 

@@ -11,6 +11,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
+import java.util.Objects;
+
 import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 import static com.nmmoc7.asmallmod.init.ModTabs.BLOCKS_TAB;
 
@@ -19,14 +21,14 @@ public class BlockBase extends Block implements IHasModel, IHasJson {
 
     public BlockBase(String name, Material material, int color) {
         super(material);
+        this.setTranslationKey(MOD_ID + "." + name);
+        this.setRegistryName(name);
+        this.setCreativeTab(BLOCKS_TAB);
 
-        setTranslationKey(MOD_ID + "." + name);
-        setRegistryName(name);
-        setCreativeTab(BLOCKS_TAB);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS_MAP.put(new ItemBlock(this).setRegistryName(this.getRegistryName()), color);
         createJson(name, "block", "cube_all");
+
+        ModBlocks.BLOCKS.put(this, color);
+        ModItems.ITEMS_MAP.put(new ItemBlock(this).setRegistryName(Objects.requireNonNull(this.getRegistryName())), color);
     }
 
     @Override
@@ -34,15 +36,6 @@ public class BlockBase extends Block implements IHasModel, IHasJson {
         AsmallMod.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inventory");
     }
 
-    /**
-     * default : new AutoJson(name, itemOrBlock, types);
-     * 普通物品,盔甲 "generated"
-     * 工具 "handheld"
-     *
-     * @param name
-     * @param itemOrBlock
-     * @param types
-     */
     @Override
     public void createJson(String name, String itemOrBlock, String types) {
         new AutoJson(name, itemOrBlock, types);

@@ -13,19 +13,9 @@ public class AutoTextures {
     String destDir;
     File typesPath;
     File destPath;
-    Random randomTypes = new Random(114514);
 
     public AutoTextures(String sourceTypes, String destTypes, String name){
-        int typesPlus = randomTypes.nextInt(3);
-        if("item".equals(sourceTypes)) {
-            switch (typesPlus) {
-                case 2:
-                    sourceTypes += "2";
-                    break;
-                default:
-                    sourceTypes += "1";
-            }
-        }
+        sourceTypes = RandomTextures.getRandomTextures(sourceTypes);
 
         typesPath = new File(sourceDir + sourceTypes + ".png");
         destDir = "../src/main/resources/assets/" + MOD_ID + "/textures/" + destTypes;
@@ -50,6 +40,19 @@ public class AutoTextures {
                         new File(dest + "/" + name + "_still.png"));
                 FileUtils.copyFile(new File(sourceDir + "fluid_still.png.mcmeta"),
                         new File(dest + "/" + name + "_still.png.mcmeta"));
+                FileUtils.copyFile(new File(sourceDir + "fluid_overlay"),
+                        new File(dest + "/" + name + "_overlay.png"));
+
+                FileUtils.copyFile(new File(sourceDir + "fluid_flow.png"),
+                        new File(dest + "/" + name + "_block_flow.png"));
+                FileUtils.copyFile(new File(sourceDir + "fluid_flow.png.mcmeta"),
+                        new File(dest + "/" + name + "_block_flow.png.mcmeta"));
+                FileUtils.copyFile(new File(sourceDir + "fluid_still.png"),
+                        new File(dest + "/" + name + "_block_still.png"));
+                FileUtils.copyFile(new File(sourceDir + "fluid_still.png.mcmeta"),
+                        new File(dest + "/" + name + "_block_still.png.mcmeta"));
+                FileUtils.copyFile(new File(sourceDir + "fluid_overlay"),
+                        new File(dest + "/" + name + "_block_overlay.png"));
                 break;
             default:
                 FileUtils.copyFile(source, destFile);

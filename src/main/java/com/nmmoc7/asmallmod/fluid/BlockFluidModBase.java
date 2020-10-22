@@ -28,8 +28,8 @@ public class BlockFluidModBase extends BlockFluidClassic implements IHasModel, I
         this.setRegistryName(name);
         this.setCreativeTab(ModTabs.FLUID_BLOCK_TAB);
 
-        createJson(name, "block", "cube_all");
         createJson(name, "blockFluid", "null");
+        createJson(name, "block", "cube_all");
         createTextures("fluid_block", "blocks", name);
 
         int color = fluid.getColor();

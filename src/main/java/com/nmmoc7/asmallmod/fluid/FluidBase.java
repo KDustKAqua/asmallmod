@@ -23,9 +23,9 @@ public class FluidBase extends Fluid implements IHasTextures {
     public FluidBase(String name, int density, int viscosity, int luminosity, int temperature, boolean gaseous, int color) {
         super(name, new ResourceLocation(MOD_ID + ":fluid/" + name + "_still"),
                 new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_flow"),
-                new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_overlay"), color);
+                new ResourceLocation(MOD_ID + ":" + "fluid/"+ name +"_overlay"), color | 0xFF000000);
 
-        this.color = color;
+        this.color = color | 0xFF000000;
 
         this.setUnlocalizedName(MOD_ID + "." + name);
         this.setDensity(density);

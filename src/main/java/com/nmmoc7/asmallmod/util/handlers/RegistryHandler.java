@@ -1,8 +1,10 @@
 package com.nmmoc7.asmallmod.util.handlers;
 
+import com.nmmoc7.asmallmod.blocks.machines.MachinesBase;
 import com.nmmoc7.asmallmod.entity.EntityInit;
 import com.nmmoc7.asmallmod.init.ModBlocks;
 import com.nmmoc7.asmallmod.init.ModFluid;
+import com.nmmoc7.asmallmod.init.ModMachines;
 import com.nmmoc7.asmallmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -40,6 +42,10 @@ public class RegistryHandler {
         for(Map.Entry<Block, Integer> entry : ModBlocks.BLOCKS.entrySet()){
             event.getRegistry().register(entry.getKey());
         }
+
+        for (MachinesBase machines : ModMachines.MACHINES_LIST) {
+            event.getRegistry().register(machines);
+        }
     }
 
     @SubscribeEvent
@@ -68,6 +74,10 @@ public class RegistryHandler {
         for(Map.Entry<Item, Integer> entry : ITEMS_MAP.entrySet()) {
             event.getRegistry().register(entry.getKey());
         }
+
+        for(Item item : ModMachines.MACHINES_LIST_ITEM){
+            event.getRegistry().register(item);
+        }
     }
 
     @SubscribeEvent
@@ -93,6 +103,12 @@ public class RegistryHandler {
         for(Map.Entry<Block, Integer> entry : ModBlocks.BLOCKS.entrySet()) {
             if(entry.getKey() instanceof IHasModel) {
                 ((IHasModel)entry.getKey()).registerModels();
+            }
+        }
+
+        for (MachinesBase machines : ModMachines.MACHINES_LIST) {
+            if (machines instanceof  IHasModel) {
+                ((IHasModel)machines).registerModels();
             }
         }
 

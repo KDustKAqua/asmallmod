@@ -59,4 +59,11 @@ public class ModTabs {
             return new ItemStack(ModBlocks.RAINBOW_FLUID_BLOCK);
         }
     };
+
+    public static final CreativeTabs MACHINES_TAB = new CreativeTabs(MOD_ID + ".machines_tab") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ModMachines.NEW_MACHINES);
+        }
+    };
 }

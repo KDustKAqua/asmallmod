@@ -1,1 +1,7 @@
-{"parent":"block/cube_all","textures":{"all":"asmallmod:blocks/iron_block_one_1","tintindex":0}}
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "asmallmod:blocks/iron_block_one_1",
+    "tintindex": 0
+  }
+}

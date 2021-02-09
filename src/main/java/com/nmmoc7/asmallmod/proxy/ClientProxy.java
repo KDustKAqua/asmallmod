@@ -17,20 +17,14 @@ import static com.nmmoc7.asmallmod.AsmallMod.MOD_ID;
 
 public class ClientProxy extends CommonProxy{
     @Override
-    public void registerItemRender(Item item, int meta, String id){ ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id)); }
+    public void registerItemRender(Item item, int meta, String id) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    }
 
     @Override
     public void registerFluidRender(BlockFluidModBase blockFluid, String blockStateName) {
-        final String location = MOD_ID + ":" + blockStateName;
         final Item itemFluid = Item.getItemFromBlock(blockFluid);
-        ModelLoader.setCustomMeshDefinition(itemFluid, new ItemMeshDefinition()
-        {
-            @Override
-            public @NotNull ModelResourceLocation getModelLocation(@NotNull ItemStack stack)
-            {
-                return new ModelResourceLocation(location, "fluid");
-            }
-        });
+        ModelLoader.setCustomMeshDefinition(itemFluid, (stack) -> new ModelResourceLocation(blockStateName, "fluid"));
         ModelLoader.setCustomStateMapper(blockFluid, new StateMapperBase()
         {
             @Override

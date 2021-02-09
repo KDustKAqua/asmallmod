@@ -24,6 +24,8 @@ public class BlockBase extends Block implements IHasModel, IHasJson {
         this.setTranslationKey(MOD_ID + "." + name);
         this.setRegistryName(name);
         this.setCreativeTab(BLOCKS_TAB);
+        this.setHardness(100);
+        this.setHarvestLevel("pickaxe", 2);
 
         createJson(name, "block", "cube_all");
 

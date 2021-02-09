@@ -1,0 +1,17 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:orientable",
+    "textures": {
+      "top": "minecraft:blocks/furnace_top",
+      "side": "minecraft:blocks/furnace_side",
+      "front": "asmallmod:blocks/new_machines"
+    }
+  },
+  "variants": {
+    "facing=north": { "model": "furnace" },
+    "facing=south": { "model": "furnace", "y": 180 },
+    "facing=west":  { "model": "furnace", "y": 270 },
+    "facing=east":  { "model": "furnace", "y": 90 }
+  }
+}

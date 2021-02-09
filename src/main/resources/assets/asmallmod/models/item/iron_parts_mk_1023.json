@@ -1,1 +1,6 @@
-{"parent":"item/generated","textures":{"layer0":"asmallmod:items/iron_parts_mk_1023"}}
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "asmallmod:items/iron_parts_mk_1023"
+  }
+}

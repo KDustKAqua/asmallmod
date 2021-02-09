@@ -1,1 +1,7 @@
-{"variants":{"normal":{"model":"asmallmod:iron_block_one_1"}}}
+{
+  "variants": {
+    "normal": {
+      "model": "asmallmod:iron_block_one_1"
+    }
+  }
+}
